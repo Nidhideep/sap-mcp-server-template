@@ -1,0 +1,15 @@
+{
+  "_comment": "Copy this file to .mcp.json and fill in real values. Never commit .mcp.json.",
+  "mcpServers": {
+    "sap-mcp-server": {
+      "command": "node",
+      "args": ["/absolute/path/to/your/sap-mcp-server/dist/index.js"],
+      "env": {
+        "SAP_BASE_URL": "https://your-sap-system.example.com",
+        "SAP_CLIENT": "100",
+        "AUTH_METHOD": "token",
+        "LOG_LEVEL": "info"
+      }
+    }
+  }
+}
