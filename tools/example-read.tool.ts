@@ -38,21 +38,6 @@ export const exampleReadTool = {
     "Use this before any write operation to check current state. " +
     "Safe to call any time — no side effects.",
 
-  inputSchema: {
-    type: "object" as const,
-    properties: {
-      recordId: {
-        type: "string",
-        description: "Business identifier for the record",
-      },
-      includeDetails: {
-        type: "boolean",
-        description: "Fetch extended attributes",
-      },
-    },
-    required: ["recordId"],
-  },
-
   async handler(rawInput: unknown): Promise<ExampleReadResult> {
     const input = ExampleReadInputSchema.parse(rawInput);
 

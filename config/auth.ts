@@ -1,11 +1,7 @@
 import { env } from "./env.js";
 
-export interface AuthHeaders {
-  Authorization?: string;
-  "sap-client": string;
-  "Content-Type": string;
-  Accept: string;
-}
+// Record<string, string> satisfies fetch()'s HeadersInit directly.
+export type AuthHeaders = Record<string, string>;
 
 /**
  * Returns HTTP headers for SAP system requests based on AUTH_METHOD.

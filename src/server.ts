@@ -1,6 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { exampleReadTool } from "../tools/example-read.tool.js";
-import { exampleWriteTool } from "../tools/example-write.tool.js";
+import { exampleReadTool, ExampleReadInputSchema } from "../tools/example-read.tool.js";
+import { exampleWriteTool, ExampleWriteInputSchema } from "../tools/example-write.tool.js";
 
 /**
  * Creates and configures the MCP server instance with all registered tools.
@@ -26,7 +26,7 @@ function registerReadTools(server: McpServer): void {
   server.tool(
     exampleReadTool.name,
     exampleReadTool.description,
-    exampleReadTool.inputSchema.properties,
+    ExampleReadInputSchema.shape,
     async ({ recordId, includeDetails }) => {
       const result = await exampleReadTool.handler({ recordId, includeDetails });
       return {
@@ -42,7 +42,7 @@ function registerWriteTools(server: McpServer): void {
   server.tool(
     exampleWriteTool.name,
     exampleWriteTool.description,
-    exampleWriteTool.inputSchema.properties,
+    ExampleWriteInputSchema.shape,
     async ({ recordId, displayName, quantity, note }) => {
       const result = await exampleWriteTool.handler({ recordId, displayName, quantity, note });
       return {

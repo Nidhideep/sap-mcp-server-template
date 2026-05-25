@@ -49,29 +49,6 @@ export const exampleWriteTool = {
     "Always reads back the result after writing to confirm success. " +
     "Call example_read_record first to check existing state before using this tool.",
 
-  inputSchema: {
-    type: "object" as const,
-    properties: {
-      recordId: {
-        type: "string",
-        description: "Business identifier for the record",
-      },
-      displayName: {
-        type: "string",
-        description: "Human-readable name or description",
-      },
-      quantity: {
-        type: "number",
-        description: "Quantity in business units",
-      },
-      note: {
-        type: "string",
-        description: "Optional free-text note",
-      },
-    },
-    required: ["recordId", "displayName", "quantity"],
-  },
-
   async handler(rawInput: unknown): Promise<ExampleWriteResult> {
     const input = ExampleWriteInputSchema.parse(rawInput);
 
