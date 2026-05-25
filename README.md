@@ -55,14 +55,6 @@ This is closer to how **real digital employees** should behave:
 ## Quick Start
 
 ```bash
-git clone https://github.com/<your-username>/sap-mcp-server-template
-cd sap-mcp-server-template
-npm install
-npm run build
-npm start
-## Quick Start
-
-```bash
 git clone https://github.com/Nidhideep/sap-mcp-server-template
 cd sap-mcp-server-template
 npm install
